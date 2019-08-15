@@ -1,0 +1,81 @@
+#scatter plot
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('plot.csv',delimiter=',')
+print(df)
+df.plot.scatter(x='a',y='b',color='g',marker='*')
+plt.title('info',color='r')
+plt.show()
+#bar plot
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('plot.csv',delimiter=',')
+print(df)
+df.plot.bar(color=['r','k'])
+plt.xlabel('x axis')
+plt.ylabel('y axis')
+plt.title('info',color='r')
+plt.legend()
+plt.show()
+#barh plot
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('plot.csv',delimiter=',')
+print(df)
+df.plot.barh(color=['r','k'])
+plt.xlabel('x axis')
+plt.ylabel('y axis')
+plt.title('info',color='r')
+plt.legend()
+plt.show()
+#areaplot
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('plot.csv',delimiter=',')
+print(df)
+df.plot.area(color=['r','k'])
+plt.xlabel('x axis')
+plt.ylabel('y axis')
+plt.title('info',color='r')
+plt.legend()
+plt.show()
+#box plot
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('plot.csv',delimiter=',')
+print(df)
+df.plot.box()
+plt.xlabel('x axis')
+plt.ylabel('y axis')
+plt.title('info',color='r')
+plt.show()
+#histogram
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('plot.csv',delimiter=',')
+print(df)
+df.plot.hist()
+plt.xlabel('x axis')
+plt.ylabel('y axis')
+plt.title('info',color='r')
+plt.show()
+#pie chart
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('plot.csv',delimiter=',')
+print(df)
+df.plot.pie(subplots=True)
+plt.title('info',color='r')
+plt.legend()
+plt.show()
+#line plot
+import matplotlib.pyplot as plt
+import pandas as pd
+df=pd.read_csv('plot.csv',delimiter=',')
+print(df)
+df.plot(color=['r','k'])
+plt.xlabel('x axis')
+plt.ylabel('y axis')
+plt.title('info',color='r')
+plt.legend()
+plt.show()

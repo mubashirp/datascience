@@ -1,0 +1,107 @@
+import pandas as pd
+zoo=pd.read_csv("zoo.csv",delimiter=',')
+print(zoo)
+print(zoo[zoo.animal=='elephant'].groupby(['uniq_id','water_need']).count())
+print(zoo.count())
+print(zoo['animal'].count())
+print(zoo['water_need'].count())
+print(zoo['water_need'].sum())
+print(zoo.water_need.sum())
+print(zoo.animal.count())
+print(zoo.sum())
+print(zoo['water_need'].max())
+print(zoo.water_need.min())
+print(zoo.water_need.mean())
+print(zoo.water_need.median())
+print(zoo.mean())
+print(zoo.groupby('animal').mean())
+print(zoo.groupby('animal').mean()['water_need'])
+print(zoo.groupby('animal').mean().water_need)
+article=pd.read_csv("pandas_tutorial_read.csv",delimiter=';',names=['my_datetime', 'event', 'country', 'user_id', 'source', 'topic'])
+print(article)
+print(article.groupby('source').count().user_id)
+p=article[article.country=='country_2'].groupby(['source','topic']).count()
+print(p)
+zoo_eats = pd.DataFrame([['elephant','vegetables'], ['tiger','meat'], ['kangaroo','vegetables'], ['zebra','vegetables'], ['giraffe','vegetables']], columns=['animal', 'food'])
+print(zoo_eats)
+print(zoo.merge(zoo_eats))
+print(zoo.merge(zoo_eats,how = 'outer'))
+print(zoo.merge(zoo_eats,how='left'))
+print(zoo.merge(zoo_eats,how='right'))
+print(zoo.merge(zoo_eats,how='left',left_on='animal',right_on='animal'))
+print(zoo.sort_values('water_need'))
+print(zoo.sort_values(by=['animal','water_need']))
+print(zoo.sort_values(by=['water_need'],ascending=False))
+print(zoo.sort_values(by='water_need',ascending=False).reset_index())
+print(zoo.sort_values(by='water_need',ascending=False).reset_index(drop=True))
+print(zoo.merge(zoo_eats,how='left').fillna('unknownn'))
+blog_buy = pd.read_csv('pandas_tutorial_buy.csv', delimiter=';', names = ['my_date_time', 'event', 'user_id', 'amount'])
+print(blog_buy)
+step1=article.merge(blog_buy,how='left',left_on='user_id',right_on='user_id')
+print(step1)
+step2=step1.amount
+print(step2)
+step3=step2.fillna(0)
+print(step3)
+result=step3.mean()
+print(result)
+
+step2=step1.fillna(0)
+print(step2)
+step3=step2.groupby('country').sum()
+print(step3)
+step4=step3.amount
+print(step4)
+step5=step4.sort_values(ascending=False)
+print(step5)
+print(step5.head(3))
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame(np.random.randn(10,4),index=pd.date_range('1/1/2000',
+periods=10), columns=list('ABCD'))
+print(df)
+df.plot()
+plt.show()
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df=pd.DataFrame({'a':np.random.randn(1000)+1,'b':np.random.randn(1000),'c':
+np.random.randn(1000) - 1}, columns=['a', 'b', 'c'])
+df.plot.hist(bins=100)
+plt.show()
+
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+df = pd.DataFrame(np.random.randn(10,4),index=pd.date_range('1-1-2011',periods=10),columns=list('ABCD'))
+print(df)
+df.plot()
+plt.show()
+df = pd.DataFrame(np.random.rand(10,4),columns=['a','b','c','d'])
+print(df)
+df.plot.barh(stacked=False)
+plt.show()
+
+
+df = pd.DataFrame({'a':np.random.randn(1000)+1,'b':np.random.randn(1000),'c':
+np.random.randn(1000) - 1}, columns=['a', 'b', 'c'])
+print(df)
+df.plot.hist(bins=20)
+plt.show()
+df = pd.DataFrame(np.random.rand(10, 5), columns=['A', 'B', 'C', 'D', 'E'])
+print(df)
+df.plot.area()
+plt.show()
+df = pd.DataFrame(np.random.rand(50, 4), columns=['a', 'b', 'c', 'd'])
+print(df)
+df.plot.scatter(x='a',y='b')
+df = pd.DataFrame(3 * np.random.rand(4), index=['a', 'b', 'c', 'd'], columns=['x'])
+print(df)
+df.plot.pie(subplots=True)
+plt.show()

@@ -1,0 +1,303 @@
+import numpy as np 
+a = np.array([1,2,3]) 
+print (a)
+import numpy as np 
+
+dt = np.dtype('i4')
+print (dt )
+import numpy as np
+a = np.arange(20).reshape(10, 2)
+print(a)
+print(a.shape)
+b = np.array([(1.5,2,3), (4,5,6)])
+print(b)
+
+import numpy as np
+a=np.arange(15).reshape(3,5)
+print(a)
+print(a.shape)
+print(a.ndim)
+print(a.size)
+print(a.dtype.name)
+print(a.dtype.itemsize)
+print(a.itemsize)
+print(a.data)
+print(type(a))
+b=np.array([10,20,30])
+print(b)
+print(type(b))
+print(b.ndim)
+print(b.data)
+
+import numpy as np
+a=np.array([1,2,3])
+print(a)
+print(a.dtype)
+b=np.array((1.2,2.1,3.4))
+print(b)
+print(b.dtype)
+
+b=np.array([[1.6,2,3],[4.2,5,6]])
+print(b.dtype)
+
+b=np.array([[1,2],[3,4]],dtype=complex)
+print(b.dtype)
+
+a=np.zeros([3,4])
+print(a)
+print(a.dtype)
+b=np.ones((2,3,4),dtype=np.int16)
+print(b)
+c=np.empty((2,3))
+print(c)
+a=np.arange(10,30,5,np.float64)
+print(a)
+a=np.arange(0,2,0.3)
+print(a.dtype)
+import numpy as np
+from numpy import pi
+a=np.linspace(10,30,5)
+print(a)
+x = np.linspace( 0, 2*pi, 10)  
+f = np.sin(x)
+print(f)
+c=np.random.randn()
+print(c)
+
+import numpy as np
+a=np.arange(24).reshape(2,3,4)
+print(a)
+print(np.arange(10000).reshape(100,100))
+
+np.set_printoptions(threshold=300)
+import numpy as np
+a=np.array([20,35,40,50])
+print(a)
+b=np.arange(4)
+print(b)
+c=a-b
+print(c)
+print(b**2)
+print(10*np.sin(a))
+print(a>35)
+
+a=np.array([[1,1],[0,1]])
+b=np.array([[2,0],[3,4]])
+print(a*b)
+print(a@b)
+print(a.dot(b))
+
+a=np.ones((2,3),dtype=int)
+print(a)
+b=np.random.random((2,3))
+print(b)
+a*=3
+print(a)
+b+=a
+print(b)
+import numpy as np
+from numpy import pi
+a=np.ones((3),dtype=np.int32)
+print(a)
+b=np.linspace(0,pi,3)
+print(b)
+print(b.dtype.name)
+c=a+b
+print(c)
+print(c.dtype.name)
+d=np.exp(c*1j)
+print(d)
+print(d.dtype.name)
+a=np.arange(6)
+print(a)
+print(a.sum())
+print(a.min())
+print(a.max())
+b=np.arange(12).reshape(3,4)
+print(b)
+print(b.sum(axis=1))
+print(b.sum(axis=0))
+print(b.max(axis=0))
+print(b.cumsum(axis=0))
+
+b=np.arange(3)
+print(b)
+print(np.exp(b))
+print(np.sqrt(b))
+c=np.array([2.,-1,4.])
+print(c)
+print(np.remainder(b,c))
+a=np.arange(10)**3
+print(a)
+print(a[3])
+print(a[6:9])
+a[:6:2]=-1000
+print(a)
+print(a[1:8:3])
+for  i in a:
+    print(i)
+
+import numpy as np
+def f(x,y):
+    return 10*x+y
+
+a=np.fromfunction(f,(5,4),dtype=int)
+for i in a.flat:
+    print(i)
+print(a)
+print(a[4,1])
+print(a[::4,::2])
+print(a[::4,::3])
+print(a[:,-2])
+
+import numpy as np
+c=np.array([[[0,1,2],[10,11,12]],[[100,101,102],[110,112,113]]])
+for element ia = np.array([-1.7, -1.5, -0.2, 0.2, 1.5, 1.7, 2.9])
+print(np.floor(a))n c.flat:
+print(element)
+print(c)
+print(c.shape)
+print(c[1,...])
+print(c[1,:,:])
+print(c[...,2])
+print(c[...,::2])
+print(c[...,:2:2])
+print(c[:,::2,:])
+print(c[:,1,::2])
+for row in c:
+    print(row)
+
+a = np.array([-1.7, -1.5, -0.2, 0.2, 1.5, 1.7, 2.9])
+print(np.floor(a))
+
+import numpy as np
+a=np.floor(10*np.random.random((3,4)))
+print(a)
+print(a.shape)
+print(a.reshape(6,2))
+print(a.shape)
+print(a.T.shape)
+a=np.array([[ 2.,  8.,  0.,  6.],
+            [ 4.,  5.,  1.,  1.],
+            [ 8.,  9.,  3.,  6.]])
+print(a)
+a.resize(((2,6)))
+print(a)
+a=np.arange(15).reshape(-1,5)
+print(a)
+import numpy as np
+a=np.floor(10*np.random.random((2,2)))
+print(a)
+b=np.floor(10*np.random.random((2,2)))
+print(b)
+print(np.vstack((a,b)))
+d=np.hstack((a,b))
+print(d)
+import numpy as np
+from numpy import newaxis
+a=np.array([[4,8],[7,9]])
+print(a)
+b=np.array([[2,3],[10,11]])
+print(b)
+print(np.row_stack((a,b)))
+print(np.vstack((a,b)))
+a=np.array([[1,2],[3,4]])
+b=np.array([[5,6]])
+print(b.T)
+print(np.concatenate((a,b),axis=None))
+a=np.r_[1:4,4,5]
+print(a)
+b=np.c_[np.array([1,2,3]),np.array([4,5,6])]
+print(b)
+a=np.floor(10*np.random.random((2,12)))
+print(a)
+print(np.hsplit(a,(5,7)))
+x = np.arange(16.0).reshape(4, 4)
+print(x)
+print(np.vsplit(x,(3,4)))
+a=np.arange(12)
+b=a
+print(b is a)
+print(a)
+print(b)
+b.shape=3,4
+print(b)
+print(a.shape)
+print(a)
+def f(x):     
+    print(id(x))
+
+print(id(a))                           # id is a unique identifier of an object
+
+print(f(a))
+a = np.arange(12)
+c=a.view()
+print(c)
+print(a)
+print(c is a)
+print(c.base is a)
+print(a.flags.owndata)
+c.shape=2,6
+print(c)
+print(a.shape)
+c[1,2]=1000
+print(c)
+print(a)
+s=a[1:3]
+d=a.copy()
+print(d)
+print(d is a)
+print(d.base is a)
+
+a=np.arange(12)**2
+print(a)
+i=np.array([1,1,3,8,5])
+print(a[i])
+
+j = np.array( [ [ 3, 4], [ 9, 7 ] ] ) 
+print(a[j])
+
+palette = np.array( [ [0,0,0],                # black
+                      [255,0,0],              # red
+                      [0,255,0],              # green
+                      [0,0,255],              # blue
+                      [255,255,255] ] )       # white
+image = np.array( [ [ 0, 1, 2, 0 ],           # each value corresponds to a color in the palette
+                    [ 0, 3, 4, 0 ]  ] )
+print(palette[image]) 
+
+a = np.arange(12).reshape(3,4)
+print(a)
+i = np.array( [ [0,1],                        # indices for the first dim of a
+                [1,2] ] )
+j = np.array( [ [2,1],                        # indices for the second dim
+                [3,3] ] )
+print(a[i,j])
+print(a[i,2])
+print(a[:,j])
+l=[i,j]
+print(a[l])
+a=np.arange(30)
+print(a)
+a.shape=2,5,-1
+print(a)
+
+import numpy as np
+import matplotlib.pyplot as plt
+def mandelbrot( h,w, maxit=20 ):
+  """Returns an image of the Mandelbrot fractal of size (h,w)."""
+    y,x = np.ogrid[ -1.4:1.4:h*1j, -2:0.8:w*1j ]
+    c = x+y*1j
+    z = c
+    divtime = maxit + np.zeros(z.shape, dtype=int)
+
+    for i in range(maxit):
+        z = z**2 + c
+        diverge = z*np.conj(z) > 2**2            # who is diverging
+        div_now = diverge & (divtime==maxit)  # who is diverging now
+        divtime[div_now] = i                  # note when
+        z[diverge] = 2                        # avoid diverging too much
+
+        return divtime
+plt.imshow(mandelbrot(400,400))
+plt.show()

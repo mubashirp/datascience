@@ -1,0 +1,13 @@
+
+import matplotlib.pyplot as pplot
+from wordcloud import WordCloud,STOPWORDS
+import numpy as npy
+from PIL import image
+dataset=open("f://data//words.txt","r").read()
+def create_word_cloud(string):
+    maskarray=npy.array(Image.open('f:\\data\\images.png'))
+    cloud=WordCloud(background_color='white',max_words=2000,mask=maskarray,stopwords=set(STOPWORDS))
+    cloud.generate(string)
+    cloud.to_file('wordcloud.png')
+dataset=dataset.lower()
+create_word_cloud(dataset)

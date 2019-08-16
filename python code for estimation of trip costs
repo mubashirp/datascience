@@ -1,0 +1,58 @@
+def plane_ride_cost(city):
+    if city=='charlotte':
+        price=183
+    elif city=='tampa':
+        price=200
+    elif city=='pittsburgh':
+        price=167
+    elif city=="los angeles":
+        price=256
+    else:
+        print("Please enter a valid city")
+        
+    return price
+
+    
+
+def hotelcost(no_of_nights,room_type):
+    if room_type=='deluxe':
+        if no_of_nights==1:
+            price=500
+        elif no_of_nights==2:
+            price=900
+        else:
+            price=no_of_nights*300
+    elif room_type=='normal':
+        if no_of_nights==1:
+            price=300
+        elif no_of_nights==2:
+            price=500
+        else:
+            price=no_of_nights*150
+    else:
+        print("invalid room type")
+    
+    return price
+
+
+    
+def car_cost(days):
+    if days>7:
+        return days*400-500
+    elif days>3:
+        return days*400-300
+    else:
+        return days*400
+    
+
+def trip_cost(city,days,room_type):
+    totalcost=plane_ride_cost(city)+hotelcost(days,room_type)+car_cost(days)
+    return totalcost 
+
+#call the module containg the above code to a program shown below
+
+import tripbackend as TC
+city=input("Please enter the destination :   ")
+days=int(input("Please enter the number of days   "))
+room_type=input("Please enter the room type: deluxe or normal   ")        
+print("The total cost of the trip is ",TC.trip_cost(city,days,room_type))
